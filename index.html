@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GAMO — Asesoría Integral en Riesgos. Diseñamos estrategias para proteger tu patrimonio y construir tu futuro financiero. Agenda tu asesoría o únete como asesor.">
+  <meta name="theme-color" content="#0D0D0D">
+  <title>GAMO | Asesoría Integral en Riesgos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/images/hero-clients.png">
+  <link rel="preload" as="image" href="assets/images/hero-advisors.png">
+</head>
+<body class="no-scroll choice-pending">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">
+      <svg class="gamo-logo-svg--large" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+        <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+        <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+        <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor-ring" id="customCursorRing"></div>
+
+  <!-- ===================================
+       NAV — Appears after path is chosen
+       =================================== -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo" id="navLogo">
+        <svg class="gamo-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+          <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+          <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+          <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+        </svg>
+        <span>GAMO</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <!-- Filled dynamically based on chosen path -->
+      </div>
+      <button class="nav__switch" id="navSwitch" title="Cambiar de camino">
+        <span class="nav__switch-icon">⇄</span>
+        <span class="nav__switch-text" id="navSwitchText">Soy asesor</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================================
+       INTRO CURTAIN
+       =================================== -->
+  <header class="intro-curtain" id="introCurtain">
+    <div class="intro-curtain__content">
+      <svg class="gamo-logo-svg--huge" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+        <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+        <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+        <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+      </svg>
+      <div class="intro-curtain__kicker">FIRMA DE CONSULTORÍA PATRIMONIAL PREMIUM</div>
+      <h1 class="intro-curtain__title">44 años diseñando el futuro financiero de México</h1>
+      <p class="intro-curtain__desc">Nuestro compromiso es doble: blindar el patrimonio de nuestras familias a través de un método probado, e impulsar el crecimiento de asesores empresarios hacia la élite del sector.</p>
+    </div>
+    
+    <div class="intro-curtain__trust-bar">
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+        <span>44 Años de Respaldo</span>
+      </div>
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        <span>+20,000 Familias Protegidas</span>
+      </div>
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+        <span>Top MDRT, COT & TOT</span>
+      </div>
+    </div>
+    <button class="intro-curtain__scroll-btn" id="curtainScrollBtn">
+      <span class="intro-curtain__scroll-text">Comencemos</span>
+      <div class="intro-curtain__scroll-arrow"></div>
+    </button>
+  </header>
+
+  <!-- ===================================
+       HERO — Split Screen (Choice Point)
+       =================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-logo" id="heroLogo">
+      <svg class="gamo-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+        <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+        <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+        <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+      </svg>
+      <span class="gamo-logo-text">GAMO</span>
+    </div>
+
+    <!-- Panel: Clientes -->
+    <div class="hero-panel hero-panel--clients" id="panelClients" data-path="clients">
+      <div class="hero-panel__bg"></div>
+      <div class="hero-panel__overlay"></div>
+      <div class="hero-panel__content">
+        <span class="hero-panel__label">Asesoría en Riesgos</span>
+        <h1 class="hero-panel__title">Protege lo que importa</h1>
+        <p class="hero-panel__desc">No vendemos pólizas. Diseñamos estrategias para blindar tu patrimonio y el futuro de tu familia.</p>
+        <button class="hero-cta" id="ctaClients" data-path="clients">
+          Agenda tu asesoría
+          <span class="cta-arrow">→</span>
+        </button>
+        <p class="hero-panel__micro">+20,000 familias confían en nosotros</p>
+      </div>
+    </div>
+
+    <!-- Separator -->
+    <div class="hero-separator" id="heroSeparator">
+      <div class="hero-separator__line"></div>
+    </div>
+
+    <!-- Panel: Asesores -->
+    <div class="hero-panel hero-panel--advisors" id="panelAdvisors" data-path="advisors">
+      <div class="hero-panel__bg"></div>
+      <div class="hero-panel__overlay"></div>
+      <div class="hero-panel__content">
+        <span class="hero-panel__label">Oportunidad de Negocio</span>
+        <h2 class="hero-panel__title">Construye tu propio camino</h2>
+        <p class="hero-panel__desc">No es un empleo. Es una estructura probada para que desarrolles tu negocio a tu ritmo, con mentoría y respaldo real.</p>
+        <button class="hero-cta" id="ctaAdvisors" data-path="advisors">
+          Conoce el modelo
+          <span class="cta-arrow">→</span>
+        </button>
+        <p class="hero-panel__micro">+110 asesores · Miembros de MDRT, COT y TOT</p>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#" class="scroll-indicator" id="scrollIndicator">
+      <span class="scroll-indicator__text">Descubre más</span>
+      <div class="scroll-indicator__arrow"></div>
+    </a>
+  </section>
+
+  <!-- ===================================
+       PATH: CLIENTS — Full Landing Page
+       =================================== -->
+  <div class="path-content" id="pathClients" data-path="clients">
+
+    <!-- Section: Quiénes somos (Client perspective) -->
+    <section class="section about-section" id="about-clients">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label">Quiénes somos</span>
+          <h2 class="section__title">No somos una aseguradora.<br>Somos tu estrategia.</h2>
+          <p class="section__subtitle">En GAMO diseñamos planes integrales que protegen a las personas de los riesgos que pueden afectar su vida, su patrimonio y su futuro. Trabajamos con las mejores aseguradoras del país para ofrecer soluciones a la medida.</p>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat reveal reveal-delay-1">
+            <div class="about-stat__number" data-target="20000" data-prefix="+">0</div>
+            <div class="about-stat__label">Familias protegidas</div>
+          </div>
+          <div class="about-stat reveal reveal-delay-2">
+            <div class="about-stat__number" data-target="44" data-prefix="+">0</div>
+            <div class="about-stat__label">Años de experiencia</div>
+          </div>
+          <div class="about-stat reveal reveal-delay-3">
+            <div class="about-stat__number" data-target="110" data-prefix="+">0</div>
+            <div class="about-stat__label">Asesores especializados</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Nuestro enfoque -->
+    <section class="section pillars-section" id="enfoque-clients">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label">Nuestro enfoque</span>
+          <h2 class="section__title">Tu patrimonio merece<br>una estrategia real</h2>
+          <p class="section__subtitle">No hacemos cotizaciones genéricas. Analizamos tu situación completa para diseñar un plan que realmente te proteja.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar reveal reveal-delay-1">
+            <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+            <h3 class="pillar__title">Protección Patrimonial</h3>
+            <p class="pillar__desc">Diseñamos coberturas inteligentes que blindan lo que más te importa: tu familia, tu hogar, tu negocio y tus activos.</p>
+          </div>
+          <div class="pillar reveal reveal-delay-2">
+            <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span>
+            <h3 class="pillar__title">Estrategia Financiera</h3>
+            <p class="pillar__desc">Combinamos protección con crecimiento. Planes que no solo te cuidan, sino que construyen capital a largo plazo.</p>
+          </div>
+          <div class="pillar reveal reveal-delay-3">
+            <span class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></span>
+            <h3 class="pillar__title">Seguimiento Continuo</h3>
+            <p class="pillar__desc">No desaparecemos después de la firma. Revisamos tu estrategia regularmente y la adaptamos conforme tu vida cambia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Cómo funciona -->
+    <section class="section process-section" id="proceso-clients">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label">¿Cómo funciona?</span>
+          <h2 class="section__title">Tres pasos para proteger<br>lo que más importa</h2>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="process-step__number">01</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Diagnóstico completo</h3>
+              <p class="process-step__desc">Analizamos tu situación personal, familiar y patrimonial para entender exactamente qué riesgos enfrentas.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-step__number">02</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Estrategia personalizada</h3>
+              <p class="process-step__desc">Diseñamos un plan a tu medida con las mejores aseguradoras del país. No vendemos productos — creamos soluciones.</p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="process-step__number">03</div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Acompañamiento permanente</h3>
+              <p class="process-step__desc">Tu asesor está contigo siempre. Revisiones periódicas, ajustes cuando tu vida cambie y soporte en todo momento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Testimonios Clientes -->
+    <section class="section testimonials-section" id="testimonios-clients">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label">Lo que dicen nuestros clientes</span>
+          <h2 class="section__title">Historias reales de<br>tranquilidad y confianza</h2>
+        </div>
+        <div class="testimonials">
+          <div class="testimonial reveal reveal-delay-1">
+            <div class="testimonial__quote-mark">"</div>
+            <p class="testimonial__text">No sabía que estaba tan expuesto. En GAMO no me vendieron un seguro — me hicieron ver todo lo que estaba en riesgo y diseñamos un plan completo. Hoy duermo tranquilo.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">RC</div>
+              <div>
+                <div class="testimonial__name">Roberto C.</div>
+                <div class="testimonial__role">Empresario · Cliente desde 2019</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial reveal reveal-delay-2">
+            <div class="testimonial__quote-mark">"</div>
+            <p class="testimonial__text">Lo que más valoro es que no desaparecieron después de la firma. Cada año revisamos mi estrategia y la ajustamos. Se siente como tener un socio que cuida tu espalda.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">AP</div>
+              <div>
+                <div class="testimonial__name">Ana P.</div>
+                <div class="testimonial__role">Directora de operaciones · Cliente desde 2021</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: CTA Final Clientes -->
+    <section class="section cta-final-section cta-final--clients" id="cta-clients">
+      <div class="section__container">
+        <div class="cta-final reveal">
+          <span class="section__label">Da el primer paso</span>
+          <h2 class="cta-final__title">¿Listo para proteger<br>lo que importa?</h2>
+          <p class="cta-final__desc">Agenda una sesión de asesoría sin costo. Analizaremos tu situación y te mostraremos cómo blindar tu patrimonio.</p>
+          <a href="#" class="btn-primary btn-primary--gold btn-primary--large">
+            Agenda tu asesoría gratuita
+            <span class="cta-arrow">→</span>
+          </a>
+          <p class="cta-final__note">Sin compromiso · 30 minutos · 100% personalizada</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===================================
+       PATH: ADVISORS — Full Landing Page
+       =================================== -->
+  <div class="path-content" id="pathAdvisors" data-path="advisors">
+
+    <!-- Section: Quiénes somos (Advisor perspective) -->
+    <section class="section about-section" id="about-advisors">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label section__label--teal">Sobre GAMO</span>
+          <h2 class="section__title">No buscamos vendedores.<br>Desarrollamos empresarios.</h2>
+          <p class="section__subtitle">GAMO es una promotoría que funciona como ecosistema. Aquí no te dan un escritorio y te desean suerte — te dan estructura, mentoría y un camino probado para construir tu propio negocio.</p>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat reveal reveal-delay-1">
+            <div class="about-stat__number about-stat__number--teal" data-target="110" data-prefix="+">0</div>
+            <div class="about-stat__label">Asesores activos</div>
+          </div>
+          <div class="about-stat reveal reveal-delay-2">
+            <div class="about-stat__number about-stat__number--teal" data-target="20000" data-prefix="+">0</div>
+            <div class="about-stat__label">Clientes en cartera</div>
+          </div>
+          <div class="about-stat reveal reveal-delay-3">
+            <div class="about-stat__number about-stat__number--teal" data-target="44" data-prefix="+">0</div>
+            <div class="about-stat__label">Años de resultados</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: El modelo -->
+    <section class="section model-section" id="modelo-advisors">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label section__label--teal">El modelo GAMO</span>
+          <h2 class="section__title">Un modelo que ya funciona.<br>Tu oportunidad de hacerlo tuyo.</h2>
+          <p class="section__subtitle">No ofrecemos empleo tradicional. Ofrecemos una estructura probada para que construyas tu propio negocio dentro de un ecosistema real.</p>
+        </div>
+        <div class="model-grid">
+          <div class="model-steps">
+            <div class="model-step reveal reveal-delay-1">
+              <span class="model-step__number">01</span>
+              <div class="model-step__content">
+                <h3 class="model-step__title">Estructura > Talento individual</h3>
+                <p class="model-step__desc">No dependemos de genios aislados. Nuestro sistema funciona porque está diseñado para ser repetible y escalable.</p>
+              </div>
+            </div>
+            <div class="model-step reveal reveal-delay-2">
+              <span class="model-step__number">02</span>
+              <div class="model-step__content">
+                <h3 class="model-step__title">Mentoría directa</h3>
+                <p class="model-step__desc">Cada asesor tiene acompañamiento real, no teoría. Aprenderás con personas que ya lograron lo que tú quieres lograr.</p>
+              </div>
+            </div>
+            <div class="model-step reveal reveal-delay-3">
+              <span class="model-step__number">03</span>
+              <div class="model-step__content">
+                <h3 class="model-step__title">Sistema comprobado</h3>
+                <p class="model-step__desc">Más de 110 asesores activos construyendo. Casos reales de crecimiento en todas las etapas.</p>
+              </div>
+            </div>
+            <div class="model-step reveal reveal-delay-4">
+              <span class="model-step__number">04</span>
+              <div class="model-step__content">
+                <h3 class="model-step__title">Crecimiento a tu ritmo</h3>
+                <p class="model-step__desc">Tú defines tu velocidad. Nosotros ponemos las herramientas, el seguimiento y la exigencia que necesitas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="model-results reveal reveal-delay-2">
+            <h3 class="model-results__title">El estándar global de excelencia</h3>
+            <div class="mdrt-tiers">
+              <div class="mdrt-tier mdrt-tier--base">
+                <div class="mdrt-tier__header">
+                  <span class="mdrt-tier__badge">MDRT</span>
+                </div>
+                <h4 class="mdrt-tier__name">Miembro</h4>
+                <p class="mdrt-tier__desc">El codiciado top 1% de la industria global. El estándar dorado.</p>
+              </div>
+              <div class="mdrt-tier mdrt-tier--cot">
+                <div class="mdrt-tier__header">
+                  <span class="mdrt-tier__badge">COT</span>
+                </div>
+                <h4 class="mdrt-tier__name">Court of the Table</h4>
+                <p class="mdrt-tier__desc">3 veces el nivel MDRT. Reservado para la élite financiera.</p>
+              </div>
+              <div class="mdrt-tier mdrt-tier--tot">
+                <div class="mdrt-tier__header">
+                  <span class="mdrt-tier__badge">TOT</span>
+                </div>
+                <h4 class="mdrt-tier__name">Top of the Table</h4>
+                <p class="mdrt-tier__desc">6 veces el nivel. La cúspide absoluta de la profesión a nivel mundial.</p>
+              </div>
+            </div>
+            <p class="model-results__text">En GAMO construimos empresarios inquebrantables. Más que prometer resultados, te proporcionamos el ecosistema y la exigencia necesarios para conquistar los tres niveles de la Million Dollar Round Table.</p>
+            <blockquote class="model-results__quote">
+              "Llegar a MDRT me cambió la vida; pero la estructura de GAMO me impulsó hasta Top of the Table. Aquí el techo lo pones tú."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: ¿Para quién es esto? -->
+    <section class="section profile-section" id="perfil-advisors">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label section__label--teal">¿Es para ti?</span>
+          <h2 class="section__title">Esto no es para todos.<br>¿Eres tú?</h2>
+        </div>
+        <div class="profile-grid">
+          <div class="profile-card profile-card--yes reveal reveal-delay-1">
+            <h3 class="profile-card__title">Buscamos personas que:</h3>
+            <ul class="profile-card__list">
+              <li class="profile-card__item profile-card__item--yes">Quieren construir algo propio, no buscar empleo</li>
+              <li class="profile-card__item profile-card__item--yes">Están dispuestas a aprender y seguir un sistema</li>
+              <li class="profile-card__item profile-card__item--yes">Tienen hambre de crecer, pero con estructura</li>
+              <li class="profile-card__item profile-card__item--yes">Valoran la mentoría y el trabajo en equipo</li>
+              <li class="profile-card__item profile-card__item--yes">Buscan resultados reales, no promesas vacías</li>
+            </ul>
+          </div>
+          <div class="profile-card profile-card--no reveal reveal-delay-2">
+            <h3 class="profile-card__title">No es para quienes:</h3>
+            <ul class="profile-card__list">
+              <li class="profile-card__item profile-card__item--no">Buscan dinero fácil o rápido sin esfuerzo</li>
+              <li class="profile-card__item profile-card__item--no">No están dispuestos a seguir un proceso</li>
+              <li class="profile-card__item profile-card__item--no">Quieren un sueldo fijo sin comprometerse</li>
+              <li class="profile-card__item profile-card__item--no">No toleran la retroalimentación directa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Testimonios Asesores -->
+    <section class="section testimonials-section" id="testimonios-advisors">
+      <div class="section__container">
+        <div class="reveal">
+          <span class="section__label section__label--teal">Historias de asesores</span>
+          <h2 class="section__title">Personas reales.<br>Resultados reales.</h2>
+        </div>
+        <div class="testimonials">
+          <div class="testimonial testimonial--teal reveal reveal-delay-1">
+            <div class="testimonial__quote-mark testimonial__quote-mark--teal">"</div>
+            <p class="testimonial__text">Venía de otra promotoría donde me dejaron solo. Aquí encontré estructura real, mentoría y un equipo que te empuja. En dos años logré la codiciada membresía de la MDRT. Nunca pensé que fuera posible.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar testimonial__avatar--teal">ML</div>
+              <div>
+                <div class="testimonial__name">Mariana L.</div>
+                <div class="testimonial__role">Asesora GAMO · MDRT 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial testimonial--teal reveal reveal-delay-2">
+            <div class="testimonial__quote-mark testimonial__quote-mark--teal">"</div>
+            <p class="testimonial__text">Lo que más me sorprendió fue el seguimiento. No es solo "vende y ya". Aquí te enseñan a construir un negocio real, con clientes recurrentes y crecimiento constante.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar testimonial__avatar--teal">DG</div>
+              <div>
+                <div class="testimonial__name">Daniel G.</div>
+                <div class="testimonial__role">Asesor GAMO · 3 años en la estructura</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: CTA Final Asesores -->
+    <section class="section cta-final-section cta-final--advisors" id="cta-advisors">
+      <div class="section__container">
+        <div class="cta-final reveal">
+          <span class="section__label section__label--teal">Da el primer paso</span>
+          <h2 class="cta-final__title">¿Listo para construir<br>algo tuyo?</h2>
+          <p class="cta-final__desc">Agenda una conversación con nuestro equipo. Sin presión. Conoce el modelo y decide si es para ti.</p>
+          <a href="#" class="btn-primary btn-primary--teal btn-primary--large">
+            Quiero conocer el modelo
+            <span class="cta-arrow">→</span>
+          </a>
+          <p class="cta-final__note">Sin compromiso · Proceso selectivo · Solo por invitación</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===================================
+       FOOTER
+       =================================== -->
+  <footer class="footer" id="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="gamo-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+            <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+            <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+            <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+          </svg>
+          GAMO
+        </div>
+        <p class="footer__tagline">Asesoría Integral en Riesgos. Diseñamos estrategias para proteger tu patrimonio y construir tu futuro financiero.</p>
+      </div>
+      <div>
+        <h4 class="footer__column-title">Navegación</h4>
+        <ul class="footer__links" id="footerLinks">
+          <li><a href="#" class="footer__link" data-reset>Inicio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__column-title">Contacto</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:contacto@gamo.mx" class="footer__link">contacto@gamo.mx</a></li>
+          <li><a href="tel:+525512345678" class="footer__link">+52 55 1234 5678</a></li>
+          <li><span class="footer__link">Ciudad de México, MX</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 GAMO — Asesoría Integral en Riesgos. Todos los derechos reservados.</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="m16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
