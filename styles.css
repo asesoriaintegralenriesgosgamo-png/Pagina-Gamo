@@ -78,17 +78,18 @@ a { text-decoration: none; color: inherit; }
   .custom-cursor {
     position: fixed;
     top: 0; left: 0;
-    width: 12px; height: 12px;
+    width: 36px; height: 36px;
     background: var(--color-gold);
     border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
     transition: transform 0.15s ease, background-color 0.2s ease, opacity 0.2s ease;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.3333);
+    will-change: transform;
     mix-blend-mode: difference;
   }
   .custom-cursor.cursor-hover {
-    transform: translate(-50%, -50%) scale(3);
+    transform: translate(-50%, -50%) scale(1);
     background: var(--color-gold-light);
   }
   .custom-cursor-ring {
