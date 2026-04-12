@@ -646,6 +646,132 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===================================
+   VALUES SECTION (Clients)
+   =================================== */
+.values-section {
+  background: var(--color-bg-deep);
+  position: relative;
+}
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.value-item:last-child {
+  border-bottom: none;
+}
+.value-item__number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  opacity: 0.5;
+  min-width: 60px;
+  line-height: 1;
+}
+.value-item__content {
+  flex: 1;
+}
+.value-item__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+.value-item__desc {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.value-item--prominent {
+  padding-bottom: var(--space-lg);
+}
+.value-item--prominent .value-item__number {
+  font-size: 3.5rem;
+  opacity: 1;
+  color: var(--color-amber);
+}
+.value-item--prominent .value-item__title {
+  font-size: 1.8rem;
+  color: var(--color-amber);
+}
+.value-item--prominent .value-item__desc {
+  font-size: 1.1rem;
+}
+.values-closing {
+  margin-top: var(--space-xl);
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-lg);
+  border-left: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.05) 0%, transparent 50%, rgba(201, 168, 76, 0.05) 100%);
+}
+.values-closing__text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* ===================================
+   CULTURE SECTION (Advisors)
+   =================================== */
+.culture-section {
+  background: var(--color-bg-deep);
+  position: relative;
+}
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.culture-card {
+  background: var(--color-bg-card);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all 400ms ease;
+  border-top: 3px solid rgba(46, 196, 182, 0.3);
+}
+.culture-card:hover {
+  transform: translateY(-5px);
+  border-top-color: var(--color-teal);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+.culture-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+}
+.culture-card__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ===================================
    PILLARS SECTION (Clients)
    =================================== */
 .pillars-section {
@@ -1201,6 +1327,7 @@ body.choice-pending .footer {
   .model-grid { grid-template-columns: 1fr; }
   .profile-grid { grid-template-columns: 1fr; }
   .testimonials { grid-template-columns: 1fr; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .culture-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
   .footer__container { grid-template-columns: 1fr; gap: var(--space-lg); }
   .nav__links { display: none; }
 }
@@ -1265,6 +1392,15 @@ body.choice-pending .footer {
   /* Sections */
   .section { padding: var(--space-2xl) var(--space-md); }
   .about-stats { flex-direction: column; gap: var(--space-lg); }
+  
+  /* Values adjustments */
+  .value-item { flex-direction: column; gap: var(--space-sm); }
+  .value-item__number { font-size: 1.5rem; }
+  .value-item--prominent .value-item__number { font-size: 2.2rem; }
+  .value-item--prominent .value-item__title { font-size: 1.5rem; }
+  .values-closing__text { font-size: 1.1rem; }
+  .values-closing { padding: var(--space-sm); }
+
   .footer__bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
   .nav__links { display: none; }
   .nav__switch-text { display: none; }
