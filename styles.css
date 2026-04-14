@@ -1545,21 +1545,39 @@ body.choice-pending .footer {
   justify-content: center;
   align-items: center;
   background-color: var(--color-bg-deep);
+  background-image:
+    linear-gradient(180deg, rgba(13, 13, 13, 0.26) 0%, rgba(13, 13, 13, 0.56) 42%, rgba(13, 13, 13, 0.88) 100%),
+    linear-gradient(90deg, rgba(13, 13, 13, 0.58) 0%, rgba(13, 13, 13, 0.18) 38%, rgba(13, 13, 13, 0.48) 100%),
+    url('assets/images/intro-curtain-consultation.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   z-index: 400;
   text-align: center;
   padding: var(--space-md);
   box-sizing: border-box;
+  overflow: hidden;
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .intro-curtain.lifted {
   transform: translateY(-100%);
   pointer-events: none;
 }
+.intro-curtain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(201, 168, 76, 0.14) 0%, transparent 38%),
+    radial-gradient(circle at 82% 22%, rgba(245, 240, 232, 0.12) 0%, transparent 20%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.22) 46%, transparent 100%);
+  pointer-events: none;
+}
 .intro-curtain::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center top, rgba(201, 168, 76, 0.1) 0%, transparent 60%);
+  background: linear-gradient(90deg, rgba(13, 13, 13, 0.72) 10%, rgba(13, 13, 13, 0.38) 42%, rgba(13, 13, 13, 0.68) 100%);
   pointer-events: none;
 }
 .intro-curtain__content {
@@ -1595,6 +1613,7 @@ body.choice-pending .footer {
   line-height: 1.1;
   margin-bottom: var(--space-md);
   color: var(--color-text-primary);
+  text-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 .intro-curtain__desc {
   font-size: 1.1rem;
@@ -1603,6 +1622,7 @@ body.choice-pending .footer {
   font-weight: 300;
   max-width: 700px;
   margin: 0 auto;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 .intro-curtain__trust-bar {
   position: absolute;
@@ -1613,8 +1633,10 @@ body.choice-pending .footer {
   justify-content: center;
   gap: 3rem;
   padding: 1.5rem 2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.5) 55%, transparent);
   border-top: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 10;
   opacity: 0;
   animation: curtainFadeIn 1.5s var(--ease-premium) 0.5s forwards;
@@ -1635,6 +1657,15 @@ body.choice-pending .footer {
   color: var(--color-teal);
 }
 @media (max-width: 768px) {
+  .intro-curtain {
+    background-position: 72% center;
+  }
+  .intro-curtain::after {
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0.3) 0%, rgba(13, 13, 13, 0.58) 28%, rgba(13, 13, 13, 0.88) 68%, rgba(13, 13, 13, 0.96) 100%);
+  }
+  .intro-curtain__content {
+    max-width: 360px;
+  }
   .intro-curtain__trust-bar {
     flex-direction: column;
     gap: 1rem;
@@ -1676,4 +1707,3 @@ body.choice-pending .footer {
 @keyframes bounceHint {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(10px); }}
-
