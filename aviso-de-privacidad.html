@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aviso de Privacidad — Asesoría Integral en Riesgos GAMO, S.C. Conoce cómo protegemos y tratamos tus datos personales.">
+  <meta name="theme-color" content="#0D0D0D">
+  <title>Aviso de Privacidad | GAMO</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Layout de la página legal ── */
+    .legal-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .legal-nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-text-primary);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .legal-nav__logo .gamo-logo-svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .legal-nav__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color var(--transition-fast), gap var(--transition-fast);
+    }
+
+    .legal-nav__back:hover {
+      color: var(--color-gold-light);
+      gap: 0.65rem;
+    }
+
+    /* ── Main content ── */
+    .legal-main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .legal-header {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .legal-header__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-header__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .legal-header__meta {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    .legal-header__intro {
+      margin-top: 1.5rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ── Sections ── */
+    .legal-section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .legal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-section__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-gold);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .legal-section__subtitle {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .legal-section p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0;
+    }
+
+    .legal-section ul li {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+    }
+
+    .legal-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      opacity: 0.7;
+    }
+
+    /* ── Contact table ── */
+    .legal-contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+    }
+
+    .legal-contact-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .legal-contact-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .legal-contact-table td {
+      padding: 0.65rem 0.5rem;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .legal-contact-table td:first-child {
+      color: var(--color-text-muted);
+      width: 40%;
+      font-weight: 500;
+      padding-right: 1.5rem;
+    }
+
+    .legal-contact-table td:last-child {
+      color: var(--color-text-secondary);
+    }
+
+    .legal-contact-table a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .legal-contact-table a:hover {
+      color: var(--color-gold-light);
+      text-decoration: underline;
+    }
+
+    /* ── Notice box ── */
+    .legal-notice-box {
+      background: rgba(201, 168, 76, 0.06);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .legal-nav {
+        padding: 0.875rem 1.25rem;
+      }
+
+      .legal-main {
+        padding: 2.5rem 1.25rem 4rem;
+      }
+
+      .legal-contact-table td:first-child {
+        width: 45%;
+        padding-right: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="loaded">
+
+  <!-- Nav -->
+  <nav class="legal-nav">
+    <a href="index.html" class="legal-nav__logo" aria-label="GAMO — Inicio">
+      <svg class="gamo-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+        <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+        <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+        <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+      </svg>
+      GAMO
+    </a>
+    <a href="index.html" class="legal-nav__back">
+      ← Inicio
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="legal-main">
+
+    <header class="legal-header">
+      <p class="legal-header__eyebrow">Legal</p>
+      <h1 class="legal-header__title">Aviso de Privacidad</h1>
+      <p class="legal-header__meta">Última actualización: Abril 2026</p>
+      <p class="legal-header__intro">
+        Asesoría Integral en Riesgos GAMO, S.C., con domicilio en Av. Monte Miranda #207, Piso 6,
+        Miranda, C.P. 76240, El Marqués, Querétaro, México, y portal de internet
+        <a href="https://gamo.mx" style="color: var(--color-gold);">https://gamo.mx</a>, es el
+        responsable del uso y protección de sus datos personales, y al respecto le informamos lo
+        siguiente.
+      </p>
+    </header>
+
+    <!-- Finalidades -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">¿Para qué fines utilizaremos sus datos personales?</h2>
+
+      <h3 class="legal-section__subtitle">Finalidades primarias</h3>
+      <p>Los datos personales que recabamos de usted serán utilizados para las siguientes finalidades, necesarias para la prestación del servicio:</p>
+      <ul>
+        <li>Verificar y confirmar su identidad como cliente, prospecto, asegurado o beneficiario.</li>
+        <li>Integrar expedientes de clientes, prospectos, asegurados y beneficiarios.</li>
+        <li>Gestionar, cotizar, contratar y dar seguimiento a pólizas de seguro de vida y productos financieros afines.</li>
+        <li>Procesar solicitudes de contratación, endosos, modificaciones y cancelaciones.</li>
+        <li>Atender el pago de siniestros, reclamaciones e indemnizaciones.</li>
+        <li>Cumplir con obligaciones legales, fiscales, contractuales y regulatorias ante la CNSF, el SAT y demás autoridades competentes.</li>
+        <li>Contactarlo para fines relacionados con los servicios contratados.</li>
+        <li>Atender dudas, aclaraciones, quejas o reclamaciones.</li>
+      </ul>
+
+      <h3 class="legal-section__subtitle">Finalidades secundarias</h3>
+      <p>De manera adicional, utilizaremos su información para:</p>
+      <ul>
+        <li>Envío de información comercial, promocional o publicitaria sobre productos de seguros y servicios de planeación financiera.</li>
+        <li>Invitaciones a eventos, cursos de capacitación o talleres de planeación.</li>
+        <li>Evaluación de la calidad del servicio y encuestas de satisfacción.</li>
+        <li>Mercadotecnia, publicidad o prospección comercial.</li>
+      </ul>
+      <p>En caso de que no desee que sus datos sean tratados para las finalidades secundarias, puede manifestar su negativa enviando un correo electrónico a: <a href="mailto:asesoriaintegralenriesgosgamo@gmail.com" style="color: var(--color-gold);">asesoriaintegralenriesgosgamo@gmail.com</a></p>
+    </section>
+
+    <!-- Empleados -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">Empleados, ex empleados y agentes afiliados</h2>
+      <p>En el caso de empleados, ex empleados, agentes y aspirantes, los datos recabados serán utilizados para: procesos de reclutamiento, selección y contratación; integración de expedientes laborales y de agencia; cumplimiento de obligaciones laborales, fiscales y de seguridad social; trámites de cédula ante la CNSF; así como evaluación de desempeño y desarrollo profesional.</p>
+    </section>
+
+    <!-- Datos que se recaban -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">¿Qué datos personales utilizaremos?</h2>
+      <p>Para las finalidades descritas, podrán recabarse los siguientes datos:</p>
+      <ul>
+        <li><strong style="color: var(--color-text-primary);">Identificación:</strong> nombre, RFC, CURP, fecha y lugar de nacimiento, nacionalidad, estado civil y ocupación.</li>
+        <li><strong style="color: var(--color-text-primary);">Contacto:</strong> domicilio, correo electrónico y teléfono.</li>
+        <li><strong style="color: var(--color-text-primary);">Laborales:</strong> empleo, puesto y trayectoria profesional.</li>
+        <li><strong style="color: var(--color-text-primary);">Académicos:</strong> nivel de estudios y certificaciones.</li>
+        <li><strong style="color: var(--color-text-primary);">Patrimoniales y financieros:</strong> ingresos, bienes, cuentas bancarias e historial crediticio.</li>
+        <li><strong style="color: var(--color-text-primary);">Beneficiarios:</strong> nombre, parentesco, fecha de nacimiento, RFC/CURP.</li>
+      </ul>
+      <p>Adicionalmente, para productos de seguro de vida, invalidez o fallecimiento, puede ser necesario recabar <strong style="color: var(--color-text-primary);">datos personales sensibles</strong> relacionados con el estado de salud, historial médico o condiciones preexistentes del asegurado. Dichos datos serán tratados bajo medidas reforzadas de confidencialidad y seguridad, y únicamente con su consentimiento expreso o cuando la Ley así lo permita.</p>
+    </section>
+
+    <!-- Transferencia -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">Transferencia de datos personales</h2>
+      <p>Sus datos personales podrán ser transferidos, dentro y fuera del territorio nacional, exclusivamente cuando resulte necesario para las finalidades descritas, a los siguientes terceros:</p>
+      <ul>
+        <li>Seguros Monterrey New York Life, S.A. de C.V. (SMNYL), institución aseguradora con la que opera GAMO, para la suscripción, administración y atención de pólizas.</li>
+        <li>Autoridades regulatorias: CNSF, SAT, CONDUSEF, IMSS, INFONAVIT.</li>
+        <li>Proveedores tecnológicos que soportan la operación de nuestros sistemas.</li>
+        <li>Proveedores administrativos necesarios para la operación.</li>
+      </ul>
+      <p>Cada transferencia se realizará bajo medidas de confidencialidad y seguridad, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y demás normativa aplicable.</p>
+    </section>
+
+    <!-- Derechos ARCO -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">Derechos ARCO</h2>
+      <p>Usted tiene derecho a <strong style="color: var(--color-text-primary);">Acceder, Rectificar, Cancelar u Oponerse</strong> al tratamiento de sus datos personales (Derechos ARCO).</p>
+      <p>Para ejercerlos, envíe una solicitud a: <a href="mailto:asesoriaintegralenriesgosgamo@gmail.com" style="color: var(--color-gold);">asesoriaintegralenriesgosgamo@gmail.com</a></p>
+      <p>Indicando: nombre completo, derecho que desea ejercer y un medio de contacto para comunicarle la respuesta. Atenderemos su solicitud en los plazos establecidos por la Ley.</p>
+    </section>
+
+    <!-- Contacto del responsable -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">Datos de contacto del responsable</h2>
+      <table class="legal-contact-table">
+        <tr>
+          <td>Nombre</td>
+          <td>Asesoría Integral en Riesgos GAMO, S.C.</td>
+        </tr>
+        <tr>
+          <td>RFC</td>
+          <td>AIR960104IV5</td>
+        </tr>
+        <tr>
+          <td>Domicilio</td>
+          <td>Av. Monte Miranda #207, Piso 6, Miranda, C.P. 76240, El Marqués, Querétaro, México.</td>
+        </tr>
+        <tr>
+          <td>Portal de internet</td>
+          <td><a href="https://gamo.mx">https://gamo.mx</a></td>
+        </tr>
+        <tr>
+          <td>Correo electrónico</td>
+          <td><a href="mailto:asesoriaintegralenriesgosgamo@gmail.com">asesoriaintegralenriesgosgamo@gmail.com</a></td>
+        </tr>
+        <tr>
+          <td>Correo ARCO / Revocación</td>
+          <td><a href="mailto:asesoriaintegralenriesgosgamo@gmail.com">asesoriaintegralenriesgosgamo@gmail.com</a></td>
+        </tr>
+        <tr>
+          <td>Teléfono</td>
+          <td>442 584 4102</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Revocación, Limitación, Seguridad, Cambios -->
+    <section class="legal-section">
+      <h2 class="legal-section__title">Revocación del consentimiento</h2>
+      <p>Usted podrá revocar el consentimiento que nos haya otorgado para el tratamiento de sus datos personales. Considere que no en todos los casos será posible atender su solicitud de inmediato, ya que puede existir alguna obligación legal que requiera continuar con el tratamiento.</p>
+      <p>Para revocar su consentimiento envíe su solicitud a: <a href="mailto:asesoriaintegralenriesgosgamo@gmail.com" style="color: var(--color-gold);">asesoriaintegralenriesgosgamo@gmail.com</a></p>
+    </section>
+
+    <section class="legal-section">
+      <h2 class="legal-section__title">Limitación del uso o divulgación de datos</h2>
+      <p>Para limitar el uso o divulgación de sus datos personales, puede solicitar su inscripción en nuestro listado de exclusión enviando un correo a: <a href="mailto:asesoriaintegralenriesgosgamo@gmail.com" style="color: var(--color-gold);">asesoriaintegralenriesgosgamo@gmail.com</a></p>
+    </section>
+
+    <section class="legal-section">
+      <h2 class="legal-section__title">Medidas de seguridad</h2>
+      <p>Asesoría Integral en Riesgos GAMO, S.C. implementa y mantiene medidas de seguridad administrativas, técnicas y físicas para proteger sus datos personales contra daño, pérdida, alteración, destrucción, uso, acceso o tratamiento no autorizado.</p>
+    </section>
+
+    <section class="legal-section">
+      <h2 class="legal-section__title">Cambios al aviso de privacidad</h2>
+      <p>El presente aviso podrá sufrir modificaciones derivadas de nuevos requerimientos legales, cambios en nuestras prácticas de privacidad u otras causas. Nos comprometemos a mantenerlo informado a través de:</p>
+      <ul>
+        <li>Publicación en nuestro portal de internet <a href="https://gamo.mx" style="color: var(--color-gold);">https://gamo.mx</a></li>
+        <li>Notificación por correo electrónico a los datos que usted haya proporcionado.</li>
+        <li>Actualización dentro de nuestras plataformas o sistemas.</li>
+      </ul>
+    </section>
+
+    <div class="legal-notice-box">
+      Al proporcionar sus datos personales, el titular reconoce haber leído y entendido el presente aviso de privacidad y acepta su contenido.
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="gamo-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 38,5 L 38,46 L 5,46 L 5,32 L 24,32 L 24,5 Z" fill="#F48A20"/>
+            <path d="M 46,25 L 46,46 L 95,46 L 95,32 L 60,32 L 60,25 Z" fill="#3EA6F5"/>
+            <path d="M 38,95 L 38,54 L 5,54 L 5,68 L 24,68 L 24,95 Z" fill="#EE4336"/>
+            <path d="M 46,75 L 46,54 L 95,54 L 95,68 L 60,68 L 60,75 Z" fill="#7EBF41"/>
+          </svg>
+          GAMO
+        </div>
+        <p class="footer__tagline">Asesoría Integral en Riesgos. Diseñamos estrategias para proteger tu patrimonio y construir tu futuro financiero.</p>
+      </div>
+      <div>
+        <h4 class="footer__column-title">Navegación</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Inicio</a></li>
+          <li><a href="aviso-de-privacidad.html" class="footer__link" aria-current="page">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__column-title">Contacto</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:contacto@gamo.mx" class="footer__link">contacto@gamo.mx</a></li>
+          <li><a href="tel:+525554820741" class="footer__link">+52 55 5482 0741</a></li>
+          <li><span class="footer__link">Ciudad de México, MX</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 GAMO — Asesoría Integral en Riesgos. Todos los derechos reservados.</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="m16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
