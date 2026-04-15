@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctaClients = document.getElementById('ctaClients');
   const ctaAdvisors = document.getElementById('ctaAdvisors');
   const heroSeparator = document.getElementById('heroSeparator');
-  const scrollIndicator = document.getElementById('scrollIndicator');
-  const heroLogo = document.getElementById('heroLogo');
+const heroLogo = document.getElementById('heroLogo');
   const mainNav = document.getElementById('mainNav');
   const navSwitch = document.getElementById('navSwitch');
   const navSwitchText = document.getElementById('navSwitchText');
@@ -200,11 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hero.classList.add('hero--chosen', `chosen-${path}`);
     hero.classList.remove(`chosen-${otherPath}`);
 
-    // 2. Hide scroll indicator
-    scrollIndicator.style.opacity = '0';
-    scrollIndicator.style.pointerEvents = 'none';
-
-    // 3. Show the correct path content, hide the other
+    // 2. Show the correct path content, hide the other
     const activeContent = path === 'clients' ? pathClients : pathAdvisors;
     const inactiveContent = path === 'clients' ? pathAdvisors : pathClients;
 
@@ -256,10 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide nav
     mainNav.classList.remove('visible');
-
-    // Show scroll indicator
-    scrollIndicator.style.opacity = '0.5';
-    scrollIndicator.style.pointerEvents = 'auto';
 
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -463,12 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nav visibility — show after scrolling past hero
   // ===================================
   window.addEventListener('scroll', () => {
-    if (!activePath) {
-      // Before choice — hide/show scroll indicator
-      scrollIndicator.style.opacity = window.scrollY > 100 ? '0' : '0.5';
-      scrollIndicator.style.pointerEvents = window.scrollY > 100 ? 'none' : 'auto';
-      return;
-    }
+    if (!activePath) return;
 
     // After choice — control nav visibility
     if (window.scrollY > window.innerHeight * 0.3) {

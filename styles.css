@@ -416,38 +416,6 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 0 15px rgba(201, 168, 76, 0.15);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0.5;
-  transition: opacity var(--transition-fast);
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-.scroll-indicator:hover { opacity: 0.9; }
-.scroll-indicator__text {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
-}
-.scroll-indicator__arrow {
-  width: 20px; height: 20px;
-  border-right: 1.5px solid var(--color-text-secondary);
-  border-bottom: 1.5px solid var(--color-text-secondary);
-  transform: rotate(45deg);
-}
-@keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
 
 /* ===================================
    HERO — Interactive States (Desktop hover)
@@ -982,6 +950,14 @@ a { text-decoration: none; color: inherit; }
   color: var(--color-teal);
   border: 1px solid rgba(46, 196, 182, 0.2);
 }
+.model-results__context {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  font-style: italic;
+  opacity: 0.8;
+}
 .model-results__text {
   font-size: 0.95rem;
   color: var(--color-text-secondary);
@@ -1359,8 +1335,6 @@ body.choice-pending .footer {
   }
 
   .hero-logo { font-size: 1rem; top: var(--space-md); }
-  .scroll-indicator { bottom: var(--space-md); }
-
   /* Mobile chosen state */
   .hero.hero--chosen { height: 50vh; }
   .hero.chosen-clients .hero-panel--advisors,
